@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>TradeVision</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="" name="keywords" />
+        <meta content="" name="description" />
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Icon Font Stylesheet -->
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+
+        <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet" />
+        <link
+            href="lib/owlcarousel/assets/owl.carousel.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div
+            id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+        >
+            <div
+                class="spinner-border text-secondary"
+                style="width: 3rem; height: 3rem"
+                role="status"
+            >
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <div class="container-fluid bg-primary px-5 d-none d-lg-block">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-6 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex">
+                        <a href="#" class="text-muted me-4"
+                            ><i class="fas fa-envelope text-secondary me-2"></i
+                            >trade_vision@gmail.com</a
+                        >
+                        <a href="#" class="text-muted me-0"
+                            ><i class="fas fa-phone-alt text-secondary me-2"></i
+                            >+442036959900</a
+                        >
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end">
+                    <div
+                        class="d-inline-flex align-items-center"
+                        style="height: 45px"
+                    >
+                        <a href="terms-of-use.html" class="text-muted me-2">
+                            Terms</a
+                        ><small> / </small>
+                        <a href="privacy-policy.html" class="text-muted mx-2">
+                            Privacy</a
+                        ><small> / </small>
+                        <a href="contact.html" class="text-muted ms-2">
+                            Contact</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid nav-bar p-0">
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0"
+            >
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="display-5 text-secondary m-0">TradeVision</h1>
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse"
+                >
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link active"
+                            >About</a
+                        >
+                        <a href="service.html" class="nav-item nav-link"
+                            >Service</a
+                        >
+                        <a href="testimonial.html" class="nav-item nav-link"
+                            >Testimonial</a
+                        >
+                        <a href="contact.html" class="nav-item nav-link"
+                            >Contact</a
+                        >
+                    </div>
+                    <a
+                        href="contact.html"
+                        class="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0"
+                        >Get A Quote</a
+                    >
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Modal Search Start -->
+        <div
+            class="modal fade"
+            id="searchModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h4
+                            class="modal-title text-secondary mb-0"
+                            id="exampleModalLabel"
+                        >
+                            Search by keyword
+                        </h4>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input
+                                type="search"
+                                class="form-control p-3"
+                                placeholder="keywords"
+                                aria-describedby="search-icon-1"
+                            />
+                            <span
+                                id="search-icon-1"
+                                class="input-group-text p-3"
+                                ><i class="fa fa-search"></i
+                            ></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px">
+                <h3
+                    class="text-white display-3 mb-4 wow fadeInDown"
+                    data-wow-delay="0.1s"
+                >
+                    About Us
+                </h3>
+                <ol
+                    class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown"
+                    data-wow-delay="0.3s"
+                >
+                    <li class="breadcrumb-item">
+                        <a href="index.html" class="text-white">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active text-secondary">About</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- About Start -->
+        <div class="container-fluid overflow-hidden py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+                        <div class="bg-light rounded">
+                            <img
+                                src="img/about-2.jpg"
+                                class="img-fluid w-100"
+                                style="margin-bottom: 30px"
+                                alt="Image"
+                            />
+                            <img
+                                src="img/about-3.jpg"
+                                class="img-fluid w-100 border-bottom border-5 border-primary"
+                                alt="Image"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+                        <h5 class="sub-title pe-3">About the company</h5>
+                        <h1 class="display-5 mb-4">
+                            Your Trusted Partner in Investing and Trading
+                        </h1>
+                        <p class="mb-4">
+                            We are dedicated to empowering investors with the
+                            knowledge and tools necessary for success in the
+                            dynamic world of investing and trading. Our mission
+                            is to provide comprehensive support and expert
+                            guidance across various aspects of financial
+                            management, from forex trading and investment
+                            management to developing robust investment
+                            strategies. We specialize in identifying stocks with
+                            big growth potential and delivering top-notch
+                            investment services designed to help you achieve
+                            your financial goals.
+                        </p>
+                        <div class="row gy-4 align-items-center">
+                            <div
+                                class="col-12 col-sm-6 d-flex align-items-center"
+                            >
+                                <i
+                                    class="fas fa-map-marked-alt fa-3x text-secondary"
+                                ></i>
+                                <h5 class="ms-4">Expertise in Forex Trading</h5>
+                            </div>
+                            <div
+                                class="col-12 col-sm-6 d-flex align-items-center"
+                            >
+                                <i
+                                    class="fas fa-passport fa-3x text-secondary"
+                                ></i>
+                                <h5 class="ms-4">
+                                    Customized Investment Management Solutions
+                                </h5>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="bg-light text-center rounded p-3">
+                                    <div class="mb-2">
+                                        <i
+                                            class="fas fa-ticket-alt fa-4x text-primary"
+                                        ></i>
+                                    </div>
+                                    <h1 class="display-5 fw-bold mb-2">11</h1>
+                                    <p class="text-muted mb-0">
+                                        Years of Experience
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-8 col-md-9">
+                                <div class="mb-5">
+                                    <p class="text-primary h6 mb-3">
+                                        <i
+                                            class="fa fa-check-circle text-secondary me-2"
+                                        ></i>
+                                        Strategic Investment Planning
+                                    </p>
+                                    <p class="text-primary h6 mb-3">
+                                        <i
+                                            class="fa fa-check-circle text-secondary me-2"
+                                        ></i>
+                                        Comprehensive Investment Services
+                                    </p>
+                                    <p class="text-primary h6 mb-3">
+                                        <i
+                                            class="fa fa-check-circle text-secondary me-2"
+                                        ></i>
+                                        Insights into Stocks with Big Growth
+                                        Potential
+                                    </p>
+                                </div>
+                                <div class="d-flex flex-wrap">
+                                    <div
+                                        id="phone-tada"
+                                        class="d-flex align-items-center justify-content-center me-4"
+                                    >
+                                        <a
+                                            href=""
+                                            class="position-relative wow tada"
+                                            data-wow-delay=".9s"
+                                        >
+                                            <i
+                                                class="fa fa-phone-alt text-primary fa-3x"
+                                            ></i>
+                                            <div
+                                                class="position-absolute"
+                                                style="top: 0; left: 25px"
+                                            >
+                                                <span
+                                                    ><i
+                                                        class="fa fa-comment-dots text-secondary"
+                                                    ></i
+                                                ></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div
+                                        class="d-flex flex-column justify-content-center"
+                                    >
+                                        <span class="text-primary"
+                                            >Have any questions?</span
+                                        >
+                                        <span
+                                            class="text-secondary fw-bold fs-5"
+                                            style="letter-spacing: 2px"
+                                            >Free: +442036959900</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+        <!-- Countries We Offer Start -->
+        <div class="container-fluid country overflow-hidden py-5">
+            <div class="container py-5">
+                <div
+                    class="section-title text-center wow fadeInUp"
+                    data-wow-delay="0.1s"
+                    style="margin-bottom: 70px"
+                >
+                    <div class="sub-style">
+                        <h5 class="sub-title text-primary px-3">
+                            MEET OUR EXPERTS
+                        </h5>
+                    </div>
+                    <h1 class="display-5 mb-4">
+                        Experts in Investing and Trading
+                    </h1>
+                    <p class="mb-0">
+                        Our team is composed of seasoned professionals dedicated
+                        to providing you with exceptional support and guidance
+                        in the world of investing and trading. With extensive
+                        expertise in forex trading, investment management, and
+                        developing effective investment strategies, our team is
+                        well-equipped to help you navigate the complexities of
+                        the financial markets. We are committed to delivering
+                        insightful analysis and personalized investment services
+                        to help you identify stocks with big growth potential
+                        and achieve your financial goals.
+                    </p>
+                </div>
+                <div class="row g-4 text-center">
+                    <div
+                        class="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp"
+                        data-wow-delay="0.1s"
+                    >
+                        <div class="country-item">
+                            <div class="rounded overflow-hidden">
+                                <img
+                                    src="img/country-1.jpg"
+                                    class="img-fluid w-100 rounded"
+                                    alt="Image"
+                                />
+                            </div>
+                            <div class="country-name">
+                                <a class="text-white fs-4">Alex Johnson</a>
+                                <p class="text-white">
+                                    Forex Trading Specialist
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp"
+                        data-wow-delay="0.3s"
+                    >
+                        <div class="country-item">
+                            <div class="rounded overflow-hidden">
+                                <img
+                                    src="img/country-2.jpg"
+                                    class="img-fluid w-100 rounded"
+                                    alt="Image"
+                                />
+                            </div>
+                            <div class="country-name">
+                                <a class="text-white fs-4">Sophia Martinez</a>
+                                <p class="text-white">
+                                    Investment Management Expert
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp"
+                        data-wow-delay="0.5s"
+                    >
+                        <div class="country-item">
+                            <div class="rounded overflow-hidden">
+                                <img
+                                    src="img/country-3.jpg"
+                                    class="img-fluid w-100 rounded"
+                                    alt="Image"
+                                />
+                            </div>
+                            <div class="country-name">
+                                <a class="text-white fs-4">James Lee</a>
+                                <p class="text-white">
+                                    Investment Strategy Advisor
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp"
+                        data-wow-delay="0.7s"
+                    >
+                        <div class="country-item">
+                            <div class="rounded overflow-hidden">
+                                <img
+                                    src="img/country-4.jpg"
+                                    class="img-fluid w-100 rounded"
+                                    alt="Image"
+                                />
+                            </div>
+
+                            <div class="country-name">
+                                <a class="text-white fs-4">Emily Davis</a>
+                                <p class="text-white">
+                                    Investment Services Consultant
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Countries We Offer End -->
+
+        <!-- Footer Start -->
+        <div
+            class="container-fluid footer py-5 wow fadeIn"
+            data-wow-delay="0.2s"
+        >
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-secondary mb-4">Contact Info</h4>
+                            <a href=""
+                                ><i class="fa fa-map-marker-alt me-2"></i>
+                                COVENT GARDEN, 71-75 Shelton St, London WC2H
+                                9JQ, UK</a
+                            >
+                            <a href=""
+                                ><i class="fas fa-envelope me-2"></i>
+                                trade_vision@gmail.com
+                            </a>
+                            <a href=""
+                                ><i class="fas fa-phone me-2"></i>
+                                +442036959900</a
+                            >
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-secondary mb-4">Opening Time</h4>
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-0">Mon - Friday:</h6>
+                                <p class="text-white mb-0">
+                                    09.00 am to 07.00 pm
+                                </p>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-0">Satday:</h6>
+                                <p class="text-white mb-0">
+                                    10.00 am to 05.00 pm
+                                </p>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-0">Vacation:</h6>
+                                <p class="text-white mb-0">
+                                    All Sunday is our vacation
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-secondary mb-4">Links</h4>
+                            <a href="index.html" class=""
+                                ><i class="fas fa-angle-right me-2"></i> Home</a
+                            >
+                            <a href="about.html" class=""
+                                ><i class="fas fa-angle-right me-2"></i>
+                                About</a
+                            >
+                            <a href="contact.html" class=""
+                                ><i class="fas fa-angle-right me-2"></i> Contact
+                                us</a
+                            >
+                            <a href="terms-of-use.html" class=""
+                                ><i class="fas fa-angle-right me-2"></i> Terms
+                                of Use</a
+                            >
+                            <a href="privacy-policy.html" class=""
+                                ><i class="fas fa-angle-right me-2"></i> Privacy
+                                Policy</a
+                            >
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="text-secondary mb-4">Newsletter</h4>
+                            <p class="text-white mb-3">
+                                Stay connected and informed with our newsletter,
+                                your go-to source for the latest updates and
+                                insights on investing.
+                            </p>
+                            <div class="position-relative mx-auto rounded-pill">
+                                <input
+                                    class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5"
+                                    type="text"
+                                    placeholder="Enter your email"
+                                    id="email"
+                                />
+                                <button
+                                    type="button"
+                                    id="submit"
+                                    onclick="sendForm()"
+                                    class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2"
+                                >
+                                    SignUp
+                                </button>
+                            </div>
+                            <div
+                                id="result"
+                                style="color: red; font-size: 12px"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"
+            ><i class="fa fa-arrow-up"></i
+        ></a>
+
+        <!-- Cookie banner -->
+        <div class="cookie-wrapper show">
+            <div>
+                <i class="bx bx-cookie"></i>
+                <h2 style="text-align: center">Cookie Consent</h2>
+            </div>
+
+            <div class="data">
+                <p>
+                    This website uses cookies to provide you with a superior and
+                    more relevant browsing experience on the site.
+                    <a href="#">Learn more...</a>
+                </p>
+            </div>
+
+            <div class="buttons">
+                <button class="cookie-button" id="acceptBtn">Accept</button>
+                <button class="cookie-button" id="declineBtn">Decline</button>
+            </div>
+        </div>
+        <!-- End Cookie banner -->
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+        <script src="js/cookiebanner.js"></script>
+        <script src="js/contact-form.js"></script>
+    </body>
+</html>
